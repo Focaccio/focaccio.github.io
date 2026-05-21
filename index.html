@@ -1,23 +1,219 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Read Write Execute</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>slickified version 0.1 20220826</p>
-<p>dev version 0.2 20230408</p>
-<p>afx version 0.5 20241015A</p>
-<p>acc version 0.8 20260306</p>
-<p>github.com/focaccio</p>
-<a href="https://github.com/focaccio">focaccio_on_github</a>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>new-page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summer of AI</title>
+  <style>
+    :root {
+      --ink: #243043;
+      --muted: #667085;
+      --cream: #fff8ea;
+      --mint: #bff7dc;
+      --sky: #bde8ff;
+      --peach: #ffd6c2;
+      --lemon: #fff0a8;
+      --rose: #ffc8dd;
+      --lilac: #d8ccff;
+      --card: rgba(255, 255, 255, 0.72);
+      --line: rgba(36, 48, 67, 0.14);
+      --shadow: 0 30px 80px rgba(70, 86, 115, 0.20);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Avenir Next", "Trebuchet MS", Verdana, sans-serif;
+      background:
+        radial-gradient(circle at 14% 18%, var(--rose), transparent 28rem),
+        radial-gradient(circle at 86% 15%, var(--sky), transparent 30rem),
+        radial-gradient(circle at 18% 88%, var(--mint), transparent 26rem),
+        radial-gradient(circle at 82% 78%, var(--lilac), transparent 28rem),
+        linear-gradient(135deg, var(--cream), var(--lemon));
+      overflow-x: hidden;
+    }
+
+    .page {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+      padding: 48px 22px;
+    }
+
+    .orb {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+      filter: blur(0.1px);
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+
+    .orb.one {
+      top: 9%;
+      left: 7%;
+    }
+
+    .orb.two {
+      right: 8%;
+      bottom: 11%;
+      width: 220px;
+      height: 220px;
+      animation-delay: -5s;
+    }
+
+    .hero {
+      width: min(980px, 100%);
+      padding: clamp(32px, 8vw, 82px);
+      border: 1px solid var(--line);
+      border-radius: 42px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 22px;
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+      color: #516073;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff8fab, #8ecae6, #95d5b2);
+      box-shadow: 0 0 24px rgba(255, 143, 171, 0.9);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(4rem, 15vw, 10.5rem);
+      font-weight: 400;
+      letter-spacing: -0.085em;
+      line-height: 0.84;
+    }
+
+    .gradient-text {
+      display: block;
+      padding-bottom: 12px;
+      background: linear-gradient(100deg, #2f6f73 0%, #d65f8b 35%, #b77c18 68%, #5a63b8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subhead {
+      max-width: 680px;
+      margin: 28px auto 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border: 1px solid rgba(36, 48, 67, 0.18);
+      border-radius: 18px;
+      color: var(--ink);
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(70, 86, 115, 0.13);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    a.button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px rgba(70, 86, 115, 0.18);
+    }
+
+    a.button.secondary {
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      color: rgba(36, 48, 67, 0.62);
+      font-size: 0.92rem;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+
+      to {
+        transform: translate3d(28px, -20px, 0) rotate(12deg);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        border-radius: 30px;
+      }
+
+      h1 {
+        letter-spacing: -0.065em;
+      }
+
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>new-page</h1>
-    <p>new page edit - no branch</p>
+  <main class="page">
+    <div class="orb one" aria-hidden="true"></div>
+    <div class="orb two" aria-hidden="true"></div>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="kicker"><span class="spark" aria-hidden="true"></span>focaccio.github.io</div>
+      <h1 id="page-title"><span class="gradient-text">Summer</span><span class="gradient-text">of AI</span></h1>
+      <p class="subhead">
+        A bright little lab notebook for the experiments, repairs, builds, and
+        occasionally suspiciously helpful robot side quests happening around here.
+      </p>
+      <div class="actions">
+        <a class="button" href="what-codex-and-i-are-up-to.html">What Codex and I are up to...</a>
+        <a class="button secondary" href="ca-work-log.html">Open the work log clone</a>
+      </div>
+      <p class="footer-note">Pastel test page, live from GitHub Pages.</p>
+    </section>
+  </main>
 </body>
 </html>

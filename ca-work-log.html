@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>codexadmin work log</title>
+  <style>
+    :root {
+      --bg: #eef3f7;
+      --card: #ffffff;
+      --ink: #1f2933;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --accent: #2563eb;
+      --accent-soft: #e8f0ff;
+      --effort: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32rem),
+        linear-gradient(180deg, #f7fbff 0, var(--bg) 22rem);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+    }
+
+    header, nav, section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    header {
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0.45rem 0 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 0.35rem;
+    }
+
+    code {
+      background: #edf2f7;
+      border: 1px solid #d8e0ea;
+      border-radius: 5px;
+      padding: 0.05rem 0.3rem;
+      font-size: 0.92em;
+    }
+
+    .stamp, .summary, .meta {
+      color: var(--muted);
+    }
+
+    .stamp {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .toc a {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #c7d2fe;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      padding: 0.35rem 0.7rem;
+      font-weight: 650;
+    }
+
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .effort {
+      background: var(--effort);
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      margin-top: 0.85rem;
+    }
+
+    .effort h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .effort h3::before {
+      content: "";
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>codexadmin work log</h1>
+      <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
+      <div class="stamp">Last updated: 2026-05-18 01:27:55 UTC</div>
+    </header>
+
+    <nav aria-label="Work log dates">
+      <h2>Jump To Date</h2>
+      <div class="toc">
+        <a href="#date-2026-05-17">2026-05-17</a>
+        <a href="#date-2026-05-15">2026-05-15</a>
+        <a href="#date-2026-05-14">2026-05-14</a>
+        <a href="#date-2026-05-13">2026-05-13</a>
+        <a href="#date-2026-05-12">2026-05-12</a>
+      </div>
+    </nav>
+
+    <main>
+      <section id="date-2026-05-17">
+        <div class="day-header">
+          <h2>2026-05-17</h2>
+          <div class="meta">QEMU, DNS, SNMP, Observium, and work-log cleanup</div>
+        </div>
+
+        <div class="effort">
+          <h3>QEMU Debian VM: qd248</h3>
+          <ul>
+            <li>Finished the Debian ARM64 QEMU VM build under <code>/Users/000qemu000/debian-arm64</code> with a 28 GB root disk, 4 GB RAM, and 1 vCPU.</li>
+            <li>Expanded the guest root partition and filesystem after the KDE installation initially exhausted the smaller default partition.</li>
+            <li>Set the persistent hostname to <code>qd248.tst.areafx.net</code>.</li>
+            <li>Configured persistent bridged networking for <code>192.168.86.248/24</code>, gateway <code>192.168.86.1</code>, DNS <code>1.1.1.1</code>, and domain <code>tst.areafx.net</code>.</li>
+            <li>Installed KDE Plasma and TigerVNC, enabled the <code>vncserver-autouser.service</code> systemd service, and verified Plasma starts behind VNC on port <code>5901</code>.</li>
+            <li>Added an EFI <code>startup.nsh</code> fallback so the VM boots Debian instead of stopping at the UEFI shell.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Local DNS And Resolver Updates</h3>
+          <ul>
+            <li>Confirmed the Mac split-DNS resolver for <code>tst.areafx.net</code> points at Binder on <code>192.168.86.33</code>.</li>
+            <li>Added the missing Binder DNS record <code>qd248.tst.areafx.net A 192.168.86.248</code>.</li>
+            <li>Bumped the BIND zone serial to <code>2026051701</code>, validated the zone with <code>named-checkzone</code>, and reloaded BIND with <code>rndc</code>.</li>
+            <li>Verified direct DNS resolution for <code>qd248.tst.areafx.net</code> through Binder.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Mac SNMP Monitoring</h3>
+          <ul>
+            <li>Configured the Mac <code>f16xc</code> built-in Net-SNMP daemon for read-only SNMPv2c polling from Observium only.</li>
+            <li>Restricted the SNMP community <code>[redacted-public-copy]</code> to <code>obx1.tst.areafx.net</code> at <code>192.168.86.42</code>.</li>
+            <li>Verified <code>obx1</code> can poll <code>f16xc</code> over SNMP and retrieve <code>sysName</code> and <code>sysDescr</code>.</li>
+            <li>Confirmed macOS bundled Net-SNMP is version <code>5.6.2.1</code> and does not cleanly support the requested SHA-256/AES-256 SNMPv3 profile, so SNMPv2c was retained for compatibility.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Observium Onboarding And Graph Repair</h3>
+          <ul>
+            <li>Added <code>f16xc</code> to Observium from the <code>nms-app</code> container using <code>add_device.php -p</code> because the Mac does not answer ICMP echo from <code>obx1</code>.</li>
+            <li>Ran discovery and polling for Observium device ID <code>16</code>; Observium identified the host as Darwin, Apple, workstation, with the SNMPv2c community redacted in this public copy.</li>
+            <li>Troubleshot missing traffic graphs for <code>en0</code>; confirmed SNMP counters and MySQL port rates were valid, but the RRD graph files were owned by <code>root:root</code>.</li>
+            <li>Changed the <code>f16xc</code> RRD tree ownership to <code>www-data:www-data</code> so the scheduled Observium poller can update graph data.</li>
+            <li>Verified a poller run as <code>www-data</code> updates <code>port-14.rrd</code> for <code>en0</code> and that RRD graph rendering succeeds.</li>
+            <li>Disabled duplicate/test Observium cron entries that could launch overlapping pollers, leaving the normal <code>poller-wrapper.py</code> and scheduled discovery path in place.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>codexadmin Work Log</h3>
+          <ul>
+            <li>Reformatted <code>ca-work-log.html</code> from a flat daily bullet list into date sections with general effort headings and task bullets.</li>
+            <li>Added a date jump list and cleaner card-style formatting while keeping the log as a single static HTML file.</li>
+            <li>Added the 2026-05-17 updates for QEMU, DNS, SNMP, Observium, and this work-log cleanup.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="date-2026-05-15">
+        <div class="day-header">
+          <h2>2026-05-15</h2>
+          <div class="meta">kg55 package work, VM Shuttle testing, and f16codex setup</div>
+        </div>
+
+        <div class="effort">
+          <h3>kg55 Optical Drive And Desktop Tooling</h3>
+          <ul>
+            <li>Upgraded kg55 packages and installed K3b <code>25.04.0-1</code> for GUI optical burning.</li>
+            <li>Verified no remaining upgradable packages, no reboot required, and active Docker/libvirt/nginx/SMB/XRDP services.</li>
+            <li>Verified Gitea is reachable on port <code>3000</code>, optical drive <code>/dev/sr0</code> is present, and the K3b desktop launcher/help works under XRDP.</li>
+            <li>Installed optical drive tooling for the ATAPI iHAS324 B writer: <code>wodim</code>, <code>genisoimage</code>, <code>growisofs</code>, <code>dvd+rw-tools</code>, <code>cdrdao</code>, <code>cdparanoia</code>, <code>libcdio-utils</code>, <code>eject</code>, and <code>udftools</code>.</li>
+            <li>Verified <code>/dev/sr0</code> and <code>/dev/cdrom</code> are present and <code>greg</code> has cdrom/device access.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>VM Tool Shuttle Test 3</h3>
+          <ul>
+            <li>Ran VM Tool Shuttle test 3 on kg55 using updated runbook commit <code>677fbaf</code>.</li>
+            <li>Created <code>vm-shuttle-test03</code> and verified LAN IP <code>192.168.86.40</code>, SSH access for <code>greg</code>, <code>su - root</code> validation, and QEMU guest agent operation.</li>
+            <li>Performed clean shutdown, QCOW2 export, streamOptimized VMDK export, checksums, <code>qemu-img</code> checks, and ESXi import notes.</li>
+            <li>Stored test 3 export evidence under <code>/srv/vms/vm-shuttle-test03/exports/20260515-1049</code>.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>VM Tool Shuttle Test 2 Cleanup And Retest</h3>
+          <ul>
+            <li>Cleanly removed <code>vm-shuttle-test02</code>: confirmed it was shut off, undefined it from libvirt, removed <code>/srv/vms/vm-shuttle-test02</code>, removed export artifacts, and verified <code>virsh list</code> was empty.</li>
+            <li>Updated VM Tool Shuttle runbooks to set and validate a root password for lab <code>su -</code> usage.</li>
+            <li>Applied the root password setting to <code>vm-shuttle-test02</code>, validated <code>su - root</code> returns UID 0, shut down cleanly, and regenerated the ESXi export bundle under <code>/srv/vms/vm-shuttle-test02/exports/20260515-0218-rootpass</code>.</li>
+            <li>Ran VM Tool Shuttle test 2, verified LAN SSH access at <code>192.168.86.38</code>, exported QCOW2 and streamOptimized VMDK artifacts, verified checksums and <code>qemu-img</code> checks, and updated workflow guides to remove cloud-init self-wait from <code>runcmd</code>.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>f16codex Host Setup</h3>
+          <ul>
+            <li>Configured <code>f16codex</code> at <code>192.168.86.122</code>.</li>
+            <li>Corrected the hostname to <code>f16codex.tst.areafx.net</code>.</li>
+            <li>Made <code>enx8cae4ce1ca72</code> persistent static at <code>192.168.86.122/24</code> with gateway <code>192.168.86.1</code>.</li>
+            <li>Added the Binder DNS A record <code>f16codex.tst.areafx.net -&gt; 192.168.86.122</code> and verified DNS, ping, and SSH by FQDN.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Runbook Precheck Updates</h3>
+          <ul>
+            <li>Updated all VM Tool Shuttle workflow guides with the 2026-05-15 precheck findings.</li>
+            <li>Documented that <code>sshpass</code> and <code>nmap</code> are required host tools.</li>
+            <li>Documented that prior <code>vm-shuttle-test01</code> state should not be reused for a clean retest.</li>
+            <li>Documented that VMDKs must be regenerated after post-export SSH repairs.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="date-2026-05-14">
+        <div class="day-header">
+          <h2>2026-05-14</h2>
+          <div class="meta">VM Shuttle foundations, Gitea previews, and work-log process repair</div>
+        </div>
+
+        <div class="effort">
+          <h3>VM Tool Shuttle Documentation</h3>
+          <ul>
+            <li>Updated workflow documents to require end-of-test SSH access validation.</li>
+            <li>Added openssh-server setup, sshd configuration validation, non-loopback LAN IP parsing, and successful SSH login evidence requirements for future tests.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>VM Tool Shuttle Test 1</h3>
+          <ul>
+            <li>Ran VM Tool Shuttle workflow test 1 on kg55.</li>
+            <li>Created a Debian cloud VM on <code>br0</code>, verified LAN IP <code>192.168.86.49</code>, shut it down cleanly, exported QCOW2, converted to VMDK, and generated evidence/checksum bundle.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>kg55 KVM Networking And Toolchain</h3>
+          <ul>
+            <li>Created persistent bridge <code>br0</code> on kg55 using <code>enp5s0f0</code> as the LAN-facing bridge port for VM access on <code>192.168.86.0/24</code>.</li>
+            <li>Left kg55 management on <code>enp4s0f0</code> unchanged.</li>
+            <li>Downloaded the official Debian 13 trixie genericcloud amd64 QCOW2 image from <code>cloud.debian.org</code> to <code>/srv/isos</code> and verified it with SHA512SUMS.</li>
+            <li>Prepared the Debian cloud image as the VM Tool Shuttle source.</li>
+            <li>Reviewed the VM Tool Shuttle Codex test runbook and installed/prepared the kg55 KVM/libvirt toolchain needed for VM creation, QCOW2 inspection, VMDK conversion, OVMF boot, libguestfs tooling, and cloud-init seed media.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Gitea DOCX Preview Support</h3>
+          <ul>
+            <li>Enabled Gitea DOCX previews on kg55 by building a persistent <code>gitea/gitea-docx</code> image with Pandoc.</li>
+            <li>Added the <code>.docx</code> external markup renderer configuration.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>codexadmin Work Log Process</h3>
+          <ul>
+            <li>Reviewed and repaired the codexadmin work-log process after confirming the daily timer was only regenerating existing static entries.</li>
+            <li>Backfilled missing 2026-05-13 operational changes.</li>
+            <li>Added a helper command for appending future high-level work-log entries.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="date-2026-05-13">
+        <div class="day-header">
+          <h2>2026-05-13</h2>
+          <div class="meta">SMB sharing and Git/GitHub publication workflow</div>
+        </div>
+
+        <div class="effort">
+          <h3>kg55 SMB Share</h3>
+          <ul>
+            <li>Installed and configured Samba on <code>kg55.tst.areafx.net</code>.</li>
+            <li>Published <code>/localsharekg55</code> as the <code>localsharekg55</code> SMB3 share.</li>
+            <li>Verified SMB3 read/write access.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Gitea To GitHub Sync</h3>
+          <ul>
+            <li>Created the <code>codexadmin/tstcodex_publicworks1</code> Gitea repository on kg55.</li>
+            <li>Configured automated GitHub synchronization to <code>Focaccio/tstcodex_publicworks1</code>.</li>
+            <li>Installed a GitHub deploy key for kg55-to-GitHub sync and verified push access after the key was added to GitHub.</li>
+            <li>Changed the GitHub sync scheduler from a five-minute systemd timer to a reboot-persistent cron job that runs every six hours.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Published Public Works Artifacts</h3>
+          <ul>
+            <li>Added <code>hello-world.txt</code> to <code>tstcodex_publicworks1</code> and pushed it from kg55 Gitea to GitHub.</li>
+            <li>Added <code>VM-tool-shuttle-workflow.txt</code> from <code>/localsharekg55</code> to <code>tstcodex_publicworks1</code> and pushed it to GitHub.</li>
+            <li>Added <code>airgapped_local_codex_research_paper_cli_layer_options.docx</code> from <code>/localsharekg55</code> to <code>tstcodex_publicworks1</code> and pushed it to GitHub.</li>
+            <li>Added <code>local-ai-agent-101-v2-20260507-bookmarked.pdf</code> from <code>/localsharekg55</code> to <code>tstcodex_publicworks1</code> and pushed it to GitHub.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="date-2026-05-12">
+        <div class="day-header">
+          <h2>2026-05-12</h2>
+          <div class="meta">Initial lab services, DNS, monitoring, PXE, and config backup</div>
+        </div>
+
+        <div class="effort">
+          <h3>kg55 Base Services</h3>
+          <ul>
+            <li>Built <code>kg55.tst.areafx.net</code> as a Debian Docker host with Docker Engine, Compose, KDE Plasma, xrdp, Chrome, Netdata, iotop, and Gitea.</li>
+            <li>Configured kg55 static networking and DNS so <code>tst.areafx.net</code> systems resolve through Binder.</li>
+            <li>Created the <code>codexadmin</code> Gitea admin account and <code>codexadmin</code> repository for ongoing change tracking.</li>
+            <li>Installed nginx on kg55 and served <code>ca-work-log.html</code> directly from the checked-out Gitea repository.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Binder DNS</h3>
+          <ul>
+            <li>Configured <code>binder1.tst.areafx.net</code> as the local authoritative DNS server for <code>tst.areafx.net</code>.</li>
+            <li>Added LAN host records for lab systems.</li>
+            <li>Configured Binder to publish <code>tst-records.txt</code> into the codexadmin repository whenever the <code>tst.areafx.net</code> BIND zone changes.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Oxidized Network Config Backup</h3>
+          <ul>
+            <li>Created the Oxidized container on kg55 from <code>oxidized/oxidized</code>.</li>
+            <li>Exposed the Oxidized web UI on port <code>8888</code> and stored persistent data under <code>/opt/oxidized</code>.</li>
+            <li>Added <code>sw1.tst.areafx.net</code> and <code>sw2.tst.areafx.net</code> to Oxidized and verified both switch configs were collected.</li>
+            <li>Created the <code>codexadmin-runbooks-tst</code> Gitea repository and documented the Oxidized container build and switch onboarding procedure.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Monitoring, PXE, And Time Sync</h3>
+          <ul>
+            <li>Configured SNMPv3 authPriv monitoring on supported Linux hosts with the <code>codexsnmp</code> settings.</li>
+            <li>Configured <code>nas1.tst.areafx.net</code> PXE/TFTP storage and routing support for the <code>10.69.0.0/16</code> PXE network.</li>
+            <li>Configured NTP/UTC on lab systems including switches, Binder, Observium, ier2, and codex1.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
