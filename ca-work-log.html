@@ -172,12 +172,15 @@
     <header>
       <h1>codexadmin work log</h1>
       <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
-      <div class="stamp">Last updated: 2026-05-18 01:27:55 UTC</div>
+      <div class="stamp">Last updated: 2026-06-01 12:15:06 UTC</div>
     </header>
 
     <nav aria-label="Work log dates">
       <h2>Jump To Date</h2>
       <div class="toc">
+        <a href="#date-2026-06-01">2026-06-01</a>
+        <a href="#date-2026-05-29">2026-05-29</a>
+        <a href="#date-2026-05-22">2026-05-22</a>
         <a href="#date-2026-05-17">2026-05-17</a>
         <a href="#date-2026-05-15">2026-05-15</a>
         <a href="#date-2026-05-14">2026-05-14</a>
@@ -187,6 +190,84 @@
     </nav>
 
     <main>
+      <section id="date-2026-06-01">
+        <div class="day-header">
+          <h2>2026-06-01</h2>
+          <div class="meta">GitHub Pages attribution and public work-log refresh</div>
+        </div>
+
+        <div class="effort">
+          <h3>Public Site Attribution</h3>
+          <ul>
+            <li>Updated the public GitHub Pages landing page with the requested directed-build attribution.</li>
+            <li>Changed the attribution label from <code>Disclaimer:</code> to <code>Nota Bene:</code> and verified the live site served the updated text after normal Pages cache propagation.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Public Work Log Clone</h3>
+          <ul>
+            <li>Located the local checkout for the public Pages repository and confirmed this static work-log clone had fallen behind recent lab activity.</li>
+            <li>Added public-safe summaries for the recent storage, service validation, NAS review, laptop host setup, DNS, and publication work.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="date-2026-05-29">
+        <div class="day-header">
+          <h2>2026-05-29</h2>
+          <div class="meta">Lab service validation, NAS review, laptop setup, and DNS updates</div>
+        </div>
+
+        <div class="effort">
+          <h3>Core Lab Service Check</h3>
+          <ul>
+            <li>Verified that the main lab services came back online after maintenance and checked the associated web, repository, monitoring-adjacent, and configuration-backup entry points.</li>
+            <li>Confirmed container-backed services were running and that scheduled update jobs were either healthy or rerun successfully after boot ordering caused an early failure.</li>
+            <li>Re-enabled the existing repository synchronization timer after confirming the sync job itself completed cleanly.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>NAS And Share Review</h3>
+          <ul>
+            <li>Confirmed the NAS host was reachable and reviewed the available file-sharing protocols.</li>
+            <li>Identified the likely SMB share path for client attachment and confirmed a separate NFS export exists with a restricted client allow-list.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Old Mac Laptop Reconfiguration</h3>
+          <ul>
+            <li>Identified the old Mac laptop on the lab network, checked its available resources, and confirmed VMware Fusion was installed.</li>
+            <li>Renamed the host to the requested lab name, made the selected physical network address persistent, and verified SSH access by the new name.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Local DNS Update</h3>
+          <ul>
+            <li>Updated the local authoritative DNS zone with the new laptop record.</li>
+            <li>Validated the zone, reloaded DNS, and confirmed the new fully qualified name resolves correctly.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="date-2026-05-22">
+        <div class="day-header">
+          <h2>2026-05-22</h2>
+          <div class="meta">Lab host storage identification and replacement planning</div>
+        </div>
+
+        <div class="effort">
+          <h3>Storage Inventory</h3>
+          <ul>
+            <li>Identified the installed spinning disk in the lab host and translated the model into practical replacement requirements.</li>
+            <li>Recommended a compatible 1-2 TB class replacement focused on 3.5-inch SATA CMR/NAS-suitable drives rather than hunting for the older original model.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="date-2026-05-17">
         <div class="day-header">
           <h2>2026-05-17</h2>
