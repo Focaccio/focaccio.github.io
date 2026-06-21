@@ -172,13 +172,13 @@
     <header>
       <h1>codexadmin work log</h1>
       <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
-      <div class="stamp">Last updated: 2026-06-21 01:47:55 UTC</div>
+      <div class="stamp">Last updated: 2026-06-21 10:49:12 UTC</div>
     </header>
 
     <nav aria-label="Work log dates">
       <h2>Jump To Date</h2>
       <div class="toc">
-        <a href="#date-2026-06-20">2026-06-20</a>
+        <a href="#date-2026-06-21">2026-06-21</a>
         <a href="#date-2026-06-01">2026-06-01</a>
         <a href="#date-2026-05-29">2026-05-29</a>
         <a href="#date-2026-05-22">2026-05-22</a>
@@ -191,26 +191,87 @@
     </nav>
 
     <main>
-      <section id="date-2026-06-20">
+      <section id="date-2026-06-21">
         <div class="day-header">
-          <h2>2026-06-20</h2>
-          <div class="meta">Public site attribution follow-up and work-log refresh</div>
+          <h2>2026-06-21</h2>
+          <div class="meta">Expanded accounting of recent lab and public-site work</div>
         </div>
 
         <div class="effort">
-          <h3>Public Page Attribution Follow-Up</h3>
+          <h3>Work Log Reconciliation</h3>
           <ul>
-            <li>Added the requested <code>Nota Bene</code> attribution line to the <code>What Codex and I are up to...</code> page.</li>
-            <li>Matched the note to the page styling so it appears as a small header note above the current work themes and embedded work-log clone.</li>
-            <li>Committed and pushed the update to the public GitHub Pages repository.</li>
+            <li>Reviewed the public work-log clone and confirmed the recent entries were too brief to be useful as an accounting of the work.</li>
+            <li>Expanded the newest section so the page records the categories of work completed since the prior refresh rather than only noting that the page was refreshed.</li>
+            <li>Kept the public page focused on useful operational history while avoiding publication of passwords, tokens, and overly specific internal addressing details.</li>
           </ul>
         </div>
 
         <div class="effort">
-          <h3>Work Log Currency Check</h3>
+          <h3>Storage And Replacement Planning</h3>
           <ul>
-            <li>Reviewed the public work-log clone after noticing it had not recorded the latest attribution-page follow-up.</li>
-            <li>Added this public-safe summary entry and updated the work-log timestamp.</li>
+            <li>Identified the physical storage type in the main lab host and translated the installed model into practical replacement requirements.</li>
+            <li>Separated the Mac laptop storage question from the lab host storage question so the replacement recommendation matched the actual machine being serviced.</li>
+            <li>Narrowed replacement guidance to 1-2 TB class 3.5-inch SATA drives, favoring CMR/NAS-suitable models over older discontinued desktop-green models.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Main Lab Host Service Validation</h3>
+          <ul>
+            <li>Verified the main lab host was back online after maintenance and checked the expected SSH, web, repository, and network-config backup surfaces.</li>
+            <li>Confirmed the important services were container-backed where expected and distinguished those healthy containers from inactive host-level systemd units.</li>
+            <li>Checked the work-log updater, diagnosed a boot-order failure caused by the repository service not being ready yet, reran the updater successfully, and confirmed future scheduling.</li>
+            <li>Checked the repository synchronization path, confirmed the sync job could complete cleanly, and restored its timer so updates continue automatically.</li>
+            <li>Verified that monitoring and DNS responsibilities belonged to the appropriate supporting hosts rather than assuming they were all running on the main lab host.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>NAS And Share Review</h3>
+          <ul>
+            <li>Resolved the NAS host and verified it was offering file-sharing services.</li>
+            <li>Identified the likely SMB share used from client machines.</li>
+            <li>Checked the NFS export state and noted that one export was intentionally limited by client allow-list rather than generally available to every lab host.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Old Mac Laptop And VMware Assessment</h3>
+          <ul>
+            <li>Identified the old Mac laptop on the lab network and confirmed it was reachable through standard remote-management services.</li>
+            <li>Checked the laptop hardware profile, memory, disk headroom, and VMware Fusion presence.</li>
+            <li>Compared the laptop capacity against Aruba Orchestrator VM requirements and concluded it was not a comfortable fit for a real Orchestrator lab VM without a larger host.</li>
+            <li>Preserved the laptop as a useful lightweight Fusion lab system while avoiding overcommitting it to a workload that wants more memory and storage.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Hostname, Static Addressing, And DNS</h3>
+          <ul>
+            <li>Renamed the old Mac laptop to the requested lab name across the macOS host-name, local-host-name, and computer-name settings.</li>
+            <li>Identified the physical Ethernet service carrying the desired lab address and made that address persistent on the existing interface.</li>
+            <li>Updated the local authoritative DNS zone with the new laptop record, validated the zone, reloaded DNS, and verified name-based SSH access.</li>
+            <li>Cleaned up stale local SSH host-key state where prior address reuse made a valid host look suspicious to the client.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Public GitHub Pages Updates</h3>
+          <ul>
+            <li>Located the local checkout for the public Pages repository and confirmed it was the source for the live custom-domain site.</li>
+            <li>Added the requested directed-build attribution to the landing page and later changed the label to <code>Nota Bene</code>.</li>
+            <li>Added the same <code>Nota Bene</code> attribution to the <code>What Codex and I are up to...</code> page and matched its existing visual style.</li>
+            <li>Resolved GitHub authentication by switching to the correct account token, rebased safely over newer remote landing-page work, and pushed without clobbering the newer page design.</li>
+            <li>Verified GitHub Pages deployments and checked both the direct Pages URL and the custom domain after cache propagation.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Public Work Log Publication</h3>
+          <ul>
+            <li>Added missing public work-log sections for storage planning, service validation, NAS review, laptop setup, DNS updates, and GitHub Pages publication work.</li>
+            <li>Updated the public work-log timestamp and jump list so the newest work is visible at the top of the page.</li>
+            <li>Rechecked the live custom-domain work-log page after deployment to confirm the current file was being served rather than an older cached copy.</li>
           </ul>
         </div>
       </section>
