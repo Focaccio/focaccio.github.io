@@ -83,6 +83,28 @@
       line-height: 1.55;
     }
 
+    .latest-update {
+      margin-bottom: 26px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 48px rgba(66, 78, 104, 0.12);
+    }
+
+    .latest-update h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .latest-update p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -173,6 +195,11 @@
       </p>
       <p class="nota-bene"><strong>Nota Bene:</strong> This page directed by GF and built by Codex.</p>
     </header>
+
+    <section class="latest-update" aria-label="Latest work log update">
+      <h2>Latest update</h2>
+      <p>June 21 work-log accounting now includes Custom-ISO, burnjob artifact bundles, Aruba/Silver Peak staging, port2ai prospect work, lab service validation, NAS review, Mac laptop/VMware assessment, DNS changes, and GitHub Pages publishing.</p>
+    </section>
 
     <section class="cards" aria-label="Current themes">
       <article class="card">
