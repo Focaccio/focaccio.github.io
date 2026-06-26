@@ -105,6 +105,33 @@
       line-height: 1.6;
     }
 
+    .presence-pulse {
+      margin: 0 0 26px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 48px rgba(66, 78, 104, 0.12);
+    }
+
+    .presence-pulse h2 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .presence-pulse ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .presence-pulse li + li {
+      margin-top: 0.35rem;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -198,7 +225,18 @@
 
     <section class="latest-update" aria-label="Latest work log update">
       <h2>Latest update</h2>
-      <p>June 21 work-log accounting now includes Custom-ISO, burnjob artifact bundles, Aruba/Silver Peak staging, port2ai prospect work, lab service validation, NAS review, Mac laptop/VMware assessment, DNS changes, and GitHub Pages publishing.</p>
+      <p>June 26 online-presence check: see.creosote.net is healthy on GitHub Pages, port2ai.com still has Cloudflare email-routing MX records but no apex website A record, and the public port2ai profile URLs still need to be captured.</p>
+    </section>
+
+    <section class="presence-pulse" aria-label="Daily online presence pulse">
+      <h2>Daily online presence pulse</h2>
+      <ul>
+        <li><strong>Demo 1:</strong> DigitalOcean IER1 BGP router peering with d42 still needs a check command or endpoint before it can be verified automatically.</li>
+        <li><strong>Demo 2:</strong> TST/Tailscale port forwarding for obx1 still needs the public port, target host/port, and expected success test.</li>
+        <li><strong>OP1:</strong> port2ai.com mail routing is present through Cloudflare; the website target is still undecided or missing.</li>
+        <li><strong>OP2:</strong> see.creosote.net resolves through focaccio.github.io and returns HTTP 200.</li>
+        <li><strong>OP3-OP5:</strong> Twitter/X, Upwork, and Freelancer need exact public profile URLs or handles added to the tracker.</li>
+      </ul>
     </section>
 
     <section class="cards" aria-label="Current themes">

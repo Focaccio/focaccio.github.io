@@ -172,13 +172,14 @@
     <header>
       <h1>codexadmin work log</h1>
       <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
-      <div class="stamp">Last updated: 2026-06-21 12:20:04 UTC</div>
+      <div class="stamp">Last updated: 2026-06-26 16:15:00 UTC</div>
     </header>
 
     <nav aria-label="Work log dates">
       <h2>Jump To Date</h2>
       <div class="toc">
         <a href="#recent-accounting-overview">Recent Accounting Overview</a>
+        <a href="#date-2026-06-26">2026-06-26</a>
         <a href="#date-2026-06-21">2026-06-21</a>
         <a href="#date-2026-06-01">2026-06-01</a>
         <a href="#date-2026-05-29">2026-05-29</a>
@@ -192,6 +193,34 @@
     </nav>
 
     <main>
+      <section id="date-2026-06-26">
+        <div class="day-header">
+          <h2>2026-06-26</h2>
+          <div class="meta">Daily online demos and presence check</div>
+        </div>
+
+        <div class="effort">
+          <h3>Public Page Publication Process</h3>
+          <ul>
+            <li>Traced <code>what-codex-and-i-are-up-to.html</code> to the <code>Focaccio/focaccio.github.io</code> GitHub Pages repository.</li>
+            <li>Confirmed the prior daily presence automation was reporting in Codex but was not editing, committing, or pushing the GitHub Pages source files.</li>
+            <li>Updated the public wrapper page and this embedded work log so the live page has a visible June 26 update.</li>
+            <li>Adjusted the daily automation instructions so future runs update the Pages repository and push the site, instead of only posting a chat summary.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Online Demos And Presence Status</h3>
+          <ul>
+            <li>Verified that <code>see.creosote.net</code> resolves through <code>focaccio.github.io</code> and returns HTTP 200 from GitHub Pages.</li>
+            <li>Verified that <code>port2ai.com</code> has Cloudflare email-routing MX records but still has no apex A record, so <code>https://port2ai.com</code> does not resolve as a website.</li>
+            <li>Recorded that Demo 1, the DigitalOcean IER1 BGP router peering with d42, still needs a check command or endpoint before it can be verified automatically.</li>
+            <li>Recorded that Demo 2, TST/Tailscale port forwarding for obx1, still needs the public port, target host/port, and expected success test.</li>
+            <li>Recorded that exact public profile URLs or handles are still needed for port2ai on Twitter/X, Upwork, and Freelancer.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="recent-accounting-overview">
         <div class="day-header">
           <h2>Recent Accounting Overview</h2>
