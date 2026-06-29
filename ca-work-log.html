@@ -172,13 +172,14 @@
     <header>
       <h1>codexadmin work log</h1>
       <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
-      <div class="stamp">Last updated: 2026-06-28 16:03:15 UTC</div>
+      <div class="stamp">Last updated: 2026-06-29 16:02:29 UTC</div>
     </header>
 
     <nav aria-label="Work log dates">
       <h2>Jump To Date</h2>
       <div class="toc">
         <a href="#recent-accounting-overview">Recent Accounting Overview</a>
+        <a href="#date-2026-06-29">2026-06-29</a>
         <a href="#date-2026-06-28">2026-06-28</a>
         <a href="#date-2026-06-27">2026-06-27</a>
         <a href="#date-2026-06-26">2026-06-26</a>
@@ -195,6 +196,31 @@
     </nav>
 
     <main>
+      <section id="date-2026-06-29">
+        <div class="day-header">
+          <h2>2026-06-29</h2>
+          <div class="meta">Daily online demos and presence check</div>
+        </div>
+
+        <div class="effort">
+          <h3>Public Status Sweep</h3>
+          <ul>
+            <li>Verified that <code>see.creosote.net</code> still aliases to <code>focaccio.github.io</code> and that <code>https://see.creosote.net/what-codex-and-i-are-up-to.html</code> returned HTTP 200 from GitHub Pages on June 29, 2026.</li>
+            <li>Verified that <code>port2ai.com</code> still publishes Cloudflare email-routing MX records and SPF, but no public apex A or AAAA web record.</li>
+            <li>Recorded that downstream <code>ask@port2ai.com</code> forwarding to Microsoft still cannot be confirmed from public DNS alone.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Tracked Demo And Profile Gaps</h3>
+          <ul>
+            <li>Found no safe public verification endpoint today for the DigitalOcean IER1 BGP router peering with d42; a publishable check target is still needed.</li>
+            <li>Found no safe public verification target today for obx1 Tailscale/TST port forwarding; the public port and expected success response are still needed.</li>
+            <li>Found no confirmed public <code>port2ai</code> profile URL today for Twitter/X, Upwork, or Freelancer, so those exact links remain to be added.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="date-2026-06-28">
         <div class="day-header">
           <h2>2026-06-28</h2>
