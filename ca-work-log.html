@@ -209,9 +209,9 @@
         <div class="effort">
           <h3>Public Status Sweep</h3>
           <ul>
-            <li>Verified that <code>see.creosote.net</code> still aliases to <code>focaccio.github.io</code> and that <code>https://see.creosote.net/what-codex-and-i-are-up-to.html</code> returned HTTP 200 from GitHub Pages on July 3, 2026.</li>
+            <li>Verified that <code>see.creosote.net</code> still aliases to <code>focaccio.github.io</code>, resolves to the GitHub Pages anycast addresses, and that <code>https://see.creosote.net/what-codex-and-i-are-up-to.html</code> returned HTTP 200 on July 3, 2026.</li>
             <li>Verified that <code>port2ai.com</code> still publishes Cloudflare email-routing MX records and SPF, but no public apex A or AAAA web record.</li>
-            <li>Recorded that downstream <code>ask@port2ai.com</code> forwarding to Microsoft still cannot be confirmed from public DNS alone because the mail route is not exposed in public DNS.</li>
+            <li>Recorded that downstream <code>ask@port2ai.com</code> forwarding to Microsoft still cannot be confirmed from public DNS alone.</li>
           </ul>
         </div>
 
@@ -220,9 +220,9 @@
           <ul>
             <li>Found no safe public verification endpoint today for the DigitalOcean IER1 BGP router peering with d42; a publishable check target is still needed.</li>
             <li>Found no safe public verification target today for obx1 Tailscale/TST port forwarding; the public port and expected success response are still needed.</li>
-            <li>Confirmed that <code>x.com/port2ai</code> still exposes public Greg Focaccio profile metadata with the <code>@port2ai</code> handle and AI Porter bio text.</li>
+            <li>Confirmed that <code>x.com/port2ai</code> still exposes public Greg Focaccio profile metadata with the <code>@port2ai</code> handle, profile title, and AI Porter bio text.</li>
             <li>Confirmed that <code>freelancer.com/u/port2ai</code> still resolves to the public Greg F. Freelancer profile for System Admin and Linux in the United States.</li>
-            <li>Found no confirmed public Upwork profile state today because anonymous fetches still hit a Cloudflare challenge page on July 3, 2026.</li>
+            <li>Found no confirmed public Upwork profile state today because anonymous fetches still hit an HTTP 403 Cloudflare challenge page on July 3, 2026.</li>
           </ul>
         </div>
       </section>
