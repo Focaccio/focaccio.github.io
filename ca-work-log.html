@@ -172,13 +172,14 @@
     <header>
       <h1>codexadmin work log</h1>
       <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
-      <div class="stamp">Last updated: 2026-07-11 16:01:42 UTC</div>
+      <div class="stamp">Last updated: 2026-07-12 16:01:35 UTC</div>
     </header>
 
     <nav aria-label="Work log dates">
       <h2>Jump To Date</h2>
       <div class="toc">
         <a href="#recent-accounting-overview">Recent Accounting Overview</a>
+        <a href="#date-2026-07-12">2026-07-12</a>
         <a href="#date-2026-07-11">2026-07-11</a>
         <a href="#date-2026-07-10">2026-07-10</a>
         <a href="#date-2026-07-09">2026-07-09</a>
@@ -208,6 +209,33 @@
     </nav>
 
     <main>
+      <section id="date-2026-07-12">
+        <div class="day-header">
+          <h2>2026-07-12</h2>
+          <div class="meta">Daily online demos and presence check</div>
+        </div>
+
+        <div class="effort">
+          <h3>Public Status Sweep</h3>
+          <ul>
+            <li>Verified that <code>see.creosote.net</code> still aliases to <code>focaccio.github.io</code>, resolves to the GitHub Pages anycast addresses, and that <code>https://see.creosote.net/what-codex-and-i-are-up-to.html</code> returned HTTP 200 on July 12, 2026.</li>
+            <li>Verified that <code>port2ai.com</code> still publishes Cloudflare email-routing MX records and SPF, but no public apex A or AAAA web record, and that <code>https://port2ai.com</code> still does not resolve.</li>
+            <li>Recorded that downstream <code>ask@port2ai.com</code> forwarding to Microsoft still cannot be confirmed from public DNS alone.</li>
+          </ul>
+        </div>
+
+        <div class="effort">
+          <h3>Tracked Demo And Profile Gaps</h3>
+          <ul>
+            <li>Found no safe public verification endpoint today for the DigitalOcean IER1 BGP router peering with d42, and no public DNS signal for likely demo hostnames such as <code>d42.port2ai.com</code> or <code>ier1.port2ai.com</code>; a publishable check target is still needed.</li>
+            <li>Found no safe public verification target today for obx1 Tailscale/TST port forwarding; <code>obx1.port2ai.com</code> and <code>obx1.creosote.net</code> did not resolve publicly, and the public port plus expected success response are still needed.</li>
+            <li>Confirmed that <code>x.com/port2ai</code> still exposes the public Greg Focaccio X profile with the <code>@port2ai</code> handle, page title, AI Porter bio text, and public profile metadata.</li>
+            <li>Confirmed that <code>freelancer.com/u/port2ai</code> still returned HTTP 200 for the public <code>port2ai</code> profile URL and still exposed the <code>Greg F. Profile | Freelancer</code> page title, but most profile details remained client-rendered in the automated fetch.</li>
+            <li>Found no confirmed public Upwork profile state today because anonymous fetches still hit an HTTP 403 Cloudflare challenge page on July 12, 2026.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="date-2026-07-11">
         <div class="day-header">
           <h2>2026-07-11</h2>
