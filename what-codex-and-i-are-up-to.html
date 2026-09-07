@@ -225,19 +225,20 @@
 
     <section class="latest-update" aria-label="Latest work log update">
       <h2>Latest update</h2>
-      <p>September 1, 2026 online-presence check through 03:55 PM PDT / 22:55 UTC: GitHub Pages still served this page and the work log over HTTPS with HTTP 200, <code>port2ai.com</code> still published Cloudflare mail-routing MX and SPF but still had no public apex web record or tracked demo hostname resolution, X still exposed the public <code>Greg Focaccio (@port2ai) / X</code> profile title, Freelancer still served the public profile URL over HTTP 200 with a stable profile title, and Upwork still blocked anonymous verification behind a Cloudflare challenge even though the public share URL remains known.</p>
+      <p>September 7, 2026, 9:03 AM PDT / 16:03 UTC: GitHub Pages, X, and Freelancer responded with HTTP 200. Upwork blocked automated verification (403). Cloudflare mail DNS remains present, but port2ai.com has no web address record; Microsoft forwarding and both demos remain unverified. Next: publish safe demo check targets and verify mail delivery.</p>
     </section>
 
     <section class="presence-pulse" aria-label="Daily online presence pulse">
       <h2>Daily online presence pulse</h2>
+      <p>Checked September 7, 2026 at 9:03 AM PDT / 16:03 UTC. Missing public records do not establish demo downtime.</p>
       <ul>
-        <li><strong>Demo 1:</strong> No safe public status endpoint surfaced on September 1, 2026 for the DigitalOcean IER1 BGP router peering with d42, and <code>d42.port2ai.com</code> plus <code>ier1.port2ai.com</code> still had no public A or AAAA records at 03:55 PM PDT / 22:55 UTC; it still needs a publishable check target.</li>
-        <li><strong>Demo 2:</strong> No safe public test target surfaced on September 1, 2026 for obx1 Tailscale/TST port forwarding; <code>obx1.port2ai.com</code> and <code>obx1.creosote.net</code> still had no public A or AAAA records at 03:55 PM PDT / 22:55 UTC, so it still needs the exposed port and expected success result.</li>
-        <li><strong>OP1:</strong> <code>port2ai.com</code> still publishes Cloudflare mail-routing MX and SPF records, but no public apex A or AAAA web record; <code>https://port2ai.com</code> still did not resolve at 03:55 PM PDT / 22:55 UTC on September 1, 2026, and downstream <code>ask@port2ai.com</code> forwarding to Microsoft is still not publicly verifiable from DNS alone.</li>
-        <li><strong>OP2:</strong> <code>see.creosote.net</code> still aliases to <code>focaccio.github.io</code>, resolves to the GitHub Pages anycast set, and both tracked public status pages returned HTTP 200 at 03:55 PM PDT / 22:55 UTC on September 1, 2026.</li>
-        <li><strong>OP3:</strong> <code>x.com/port2ai</code> still returned HTTP 200 on September 1, 2026 and exposed the public <code>Greg Focaccio (@port2ai) / X</code> profile title at 03:55 PM PDT / 22:55 UTC.</li>
-        <li><strong>OP4:</strong> The public Upwork share URL <code>https://www.upwork.com/freelancers/~0151241ce759858445?mp_source=share</code> still returned an HTTP 403 Cloudflare challenge page with title <code>Challenge - Upwork</code> on September 1, 2026, so the public profile remains unconfirmed from a safe automated check.</li>
-        <li><strong>OP5:</strong> <code>freelancer.com/u/port2ai</code> returned HTTP 200 on September 1, 2026 for the public profile URL and exposed the title <code>Greg Profile | Freelancer</code> at 03:55 PM PDT / 22:55 UTC.</li>
+        <li><strong>Demo 1:</strong> DigitalOcean IER1 BGP peering with d42 remains unverified: <code>ier1.port2ai.com</code> and <code>d42.port2ai.com</code> return NXDOMAIN. Public search found no check target; publish a safe BGP status endpoint.</li>
+        <li><strong>Demo 2:</strong> obx1 Tailscale/TST forwarding remains unverified: <code>obx1.port2ai.com</code> and <code>obx1.creosote.net</code> return NXDOMAIN. A public test endpoint, exposed port, and expected response are needed.</li>
+        <li><strong>OP1:</strong> <code>port2ai.com</code> has Cloudflare nameservers, mail-routing MX, and SPF, but no apex A/AAAA record; HTTPS fails to resolve. Forwarding from <code>ask@port2ai.com</code> to Microsoft requires a delivery check; DNS alone cannot confirm it.</li>
+        <li><strong>OP2:</strong> <code>see.creosote.net</code> aliases to <code>focaccio.github.io</code>; the homepage and both status pages returned HTTP 200 over HTTPS.</li>
+        <li><strong>OP3:</strong> <a href="https://x.com/port2ai">X @port2ai</a> returned HTTP 200 with title <code>Greg Focaccio (@port2ai) / X</code>.</li>
+        <li><strong>OP4:</strong> The <a href="https://www.upwork.com/freelancers/~0151241ce759858445?mp_source=share">Upwork profile share URL</a> returned HTTP 403 with title <code>Challenge - Upwork</code>; profile verification needs an interactive check.</li>
+        <li><strong>OP5:</strong> <a href="https://www.freelancer.com/u/port2ai">Freelancer @port2ai</a> returned HTTP 200 with title <code>Greg F. Profile | Freelancer</code>.</li>
       </ul>
     </section>
 
