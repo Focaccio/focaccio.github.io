@@ -172,13 +172,14 @@
     <header>
       <h1>codexadmin work log</h1>
       <p class="summary">High-level record of lab infrastructure work, grouped by date and general effort so follow-up tasks are easier to find.</p>
-      <div class="stamp">Last updated: 2026-09-08 22:41 UTC</div>
+      <div class="stamp">Last updated: 2026-09-09 16:15 UTC</div>
     </header>
 
     <nav aria-label="Work log dates">
       <h2>Jump To Date</h2>
       <div class="toc">
         <a href="#recent-accounting-overview">Recent Accounting Overview</a>
+        <a href="#date-2026-09-09">2026-09-09</a>
         <a href="#date-2026-09-08">2026-09-08</a>
         <a href="#date-2026-09-07">2026-09-07</a>
         <a href="#date-2026-09-01">2026-09-01</a>
@@ -238,6 +239,26 @@
     </nav>
 
     <main>
+      <section id="date-2026-09-09">
+        <div class="day-header">
+          <h2>2026-09-09</h2>
+          <div class="meta">Daily online demos and presence check</div>
+        </div>
+        <p class="summary">Checked at 9:15 AM PDT / 16:15 UTC using public DNS, HTTP, and search. Missing public records do not establish demo downtime.</p>
+        <div class="effort">
+          <h3>Public Status Sweep</h3>
+          <ul>
+            <li><strong>Demo 1:</strong> DigitalOcean IER1 BGP peering with d42 remains unverified: <code>ier1.port2ai.com</code> and <code>d42.port2ai.com</code> return NXDOMAIN. Public search found no check target; publish a safe BGP status endpoint.</li>
+            <li><strong>Demo 2:</strong> obx1 Tailscale/TST forwarding remains unverified: <code>obx1.port2ai.com</code> and <code>obx1.creosote.net</code> return NXDOMAIN. A public test endpoint, exposed port, and expected response are needed.</li>
+            <li><strong>OP1:</strong> <code>port2ai.com</code> has Cloudflare nameservers, mail-routing MX, and SPF, but no apex A/AAAA record; HTTPS fails to resolve. Forwarding from <code>ask@port2ai.com</code> to Microsoft requires a delivery check; DNS alone cannot confirm it.</li>
+            <li><strong>OP2:</strong> <code>see.creosote.net</code> aliases to <code>focaccio.github.io</code>; the homepage and both status pages returned HTTP 200 over HTTPS.</li>
+            <li><strong>OP3:</strong> <a href="https://x.com/port2ai">X @port2ai</a> returned HTTP 200 with title <code>Greg Focaccio (@port2ai) / X</code>.</li>
+            <li><strong>OP4:</strong> The <a href="https://www.upwork.com/freelancers/~0151241ce759858445?mp_source=share">Upwork profile share URL</a> returned HTTP 403 with title <code>Challenge - Upwork</code>; profile verification needs an interactive check.</li>
+            <li><strong>OP5:</strong> <a href="https://www.freelancer.com/u/port2ai">Freelancer @port2ai</a> returned HTTP 200 with title <code>Greg F. Profile | Freelancer</code>.</li>
+          </ul>
+        </div>
+      </section>
+
       <section id="date-2026-09-08">
         <div class="day-header">
           <h2>2026-09-08</h2>
